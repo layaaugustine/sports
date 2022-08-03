@@ -1,0 +1,38 @@
+{% extends 'partial/base.html' %}
+{% block title %}All Prediction{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row ml-4 ">
+        <div class="col-md-8 offset-md-2 mt-5 boder"> 
+            <table class="table">
+                <thead>
+                  <tr>
+                   
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Sex</th>
+                    <th scope="col">Prediction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in predicted_sports %}
+                  <tr>
+                    <th scope="row">{{ data.name }}</th>
+                    <th>{{ data.age }}</th>
+                    <th>{{ data.height}}</th>
+                    <th>{{ data.sex }}</th>
+                    <th>{{ data.prediction }}</th>
+                   
+
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
